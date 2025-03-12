@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block heading %}
+{{ title }}
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+            <div class="row">
+                    <article>
+                        <div class="container">
+                                <div class="col-md-10 col-lg-8 mx-auto">
+                                    {{ content |safe }}
+                                </div>
+                        </div>
+                    </article>
+            </div>
+        </div>
+        <hr>
+    {% endblock %}
+

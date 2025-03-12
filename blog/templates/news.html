@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}News{% endblock %}
+
+{% block heading %}
+News
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                {% for new in object_list %}
+                 <div class="post-preview"> <a href="{% url 'news-post' pk=new.pk %}">
+                        <h2 class="post-title">{{ new.title }}</h2>
+                            <h3 class="post-subtitle">{{ new.subheading }}</h3>
+                        </a>
+                        <p class="post-meta">Posted by&nbsp;<a href="#">{{ new.author }} {{ new.published_date }}</a></p>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}
